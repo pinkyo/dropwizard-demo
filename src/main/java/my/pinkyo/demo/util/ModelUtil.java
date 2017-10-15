@@ -1,6 +1,7 @@
 package my.pinkyo.demo.util;
 
 import my.pinkyo.demo.entity.UserEntity;
+import my.pinkyo.demo.model.Sex;
 import my.pinkyo.demo.model.User;
 
 /**
@@ -11,14 +12,14 @@ public class ModelUtil {
     public static UserEntity convertToEntity(User user) {
         UserEntity entity = new UserEntity();
         entity.setName(user.getName());
-        entity.setSex(user.getSex());
+        entity.setSex(user.getSex().name());
         return entity;
     }
 
     public static User convertToModel(UserEntity entity) {
         User user = new User();
         user.setName(entity.getName());
-        user.setSex(entity.getSex());
+        user.setSex(Sex.valueOf(entity.getSex()));
 
         return user;
     }

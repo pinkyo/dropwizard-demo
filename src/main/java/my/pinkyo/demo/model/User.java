@@ -1,12 +1,13 @@
 package my.pinkyo.demo.model;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class User {
     @Size(min = 1, max = 90)
     private String name;
-    @Size(min = 1, max = 20)
-    private String sex;
+    @NotNull
+    private Sex sex;
 
     public String getName() {
         return name;
@@ -16,11 +17,11 @@ public class User {
         this.name = name;
     }
 
-    public String getSex() {
+    public Sex getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Sex sex) {
         this.sex = sex;
     }
 }

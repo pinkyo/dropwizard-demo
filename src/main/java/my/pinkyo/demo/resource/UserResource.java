@@ -2,6 +2,7 @@ package my.pinkyo.demo.resource;
 
 import com.codahale.metrics.annotation.Timed;
 import io.dropwizard.hibernate.UnitOfWork;
+import my.pinkyo.demo.BadRequestException;
 import my.pinkyo.demo.Dao.UserDao;
 import my.pinkyo.demo.entity.UserEntity;
 import my.pinkyo.demo.model.User;
@@ -30,7 +31,7 @@ public class UserResource {
     public Response createUser(@Valid @NotNull User user) {
         UserEntity entity = userDao.findByName(user.getName());
         if (entity != null) {
-            throw new RuntimeException("user have existed.");
+            throw new BadRequestException("user have existed.");
         }
 
         URI createdUri = URI.create(String.format("/test/%s", user.getName()));
@@ -44,7 +45,7 @@ public class UserResource {
     public Response updateUser(@Valid @NotNull User user) {
         UserEntity entity = userDao.findByName(user.getName());
         if (entity == null) {
-            throw new RuntimeException("user is not found.");
+            throw new BadRequestException("user is not found.");
         }
 
         userDao.updateUser(ModelUtil.convertToEntity(user));
@@ -56,7 +57,12 @@ public class UserResource {
     @Timed
     @UnitOfWork
     public User getUserByName(@PathParam("name") String name) {
-        return ModelUtil.convertToModel(userDao.findByName(name));
+        UserEntity result = userDao.findByName(name);
+        if (result == null) {
+            throw new BadRequestException("user is not found.");
+        }
+
+        return ModelUtil.convertToModel(result);
     }
 
     @DELETE
