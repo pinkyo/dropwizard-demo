@@ -12,8 +12,10 @@ allprojects {
 }
 
 dependencies {
-    compile group: 'io.dropwizard',  name: 'dropwizard-core', version: '1.1.4'
+    compile 'io.dropwizard:dropwizard-core:1.1.4'
     compile 'io.dropwizard:dropwizard-hibernate:1.1.4'
     runtime 'com.h2database:h2:1.4.196'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.10.0'
+    testCompile 'io.dropwizard:dropwizard-testing:1.1.4'
 }

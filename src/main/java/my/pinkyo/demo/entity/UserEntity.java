@@ -3,6 +3,7 @@ package my.pinkyo.demo.entity;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * Created by yinkn on 2017/7/9.
@@ -40,5 +41,20 @@ public class UserEntity {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserEntity entity = (UserEntity) o;
+        return Objects.equals(id, entity.id) &&
+                Objects.equals(name, entity.name) &&
+                Objects.equals(sex, entity.sex);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, sex);
     }
 }
