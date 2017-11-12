@@ -1,0 +1,11 @@
+language: java
+
+jdk:
+- oraclejdk8
+
+env:
+  global:
+    - COVERALLS_REPO_TOKEN=apBClVR2Bxy20Z1tLFIzSKJuURh7sVCpM
+
+after_success:
+- ./gradlew cobertura coveralls
