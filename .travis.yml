@@ -9,6 +9,7 @@ env:
 
 before_install:
 - sudo chmod +x ./gradlew ./gradlew.bat
+- gradle wrapper
 
 after_success:
 - gradle cobertura coveralls
