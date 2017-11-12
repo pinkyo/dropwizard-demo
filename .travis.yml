@@ -5,6 +5,7 @@ jdk:
 
 env:
   global:
+    - CI_NAME=travis-ci
     - COVERALLS_REPO_TOKEN=J7CUVVb2o5hlnRFmC4g1wZpAklsXFjAIj
 
 before_install:
