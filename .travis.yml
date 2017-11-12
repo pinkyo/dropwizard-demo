@@ -7,5 +7,8 @@ env:
   global:
     - COVERALLS_REPO_TOKEN=apBClVR2Bxy20Z1tLFIzSKJuURh7sVCpM
 
+before_install:
+- sudo chmod +x ./gradlew ./gradlew.bat
+
 after_success:
 - gradle cobertura coveralls
