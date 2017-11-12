@@ -5,7 +5,7 @@ jdk:
 
 env:
   global:
-    - COVERALLS_REPO_TOKEN=apBClVR2Bxy20Z1tLFIzSKJuURh7sVCpM
+    - COVERALLS_REPO_TOKEN=J7CUVVb2o5hlnRFmC4g1wZpAklsXFjAIj
 
 before_install:
 - sudo chmod +x ./gradlew ./gradlew.bat
