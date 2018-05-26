@@ -1,9 +1,8 @@
-DDDDDDD          EEEEEEEEE       MMM         MMM         OOOOOO
-DDDDDDDD         EEEEEEEEE       MMMM       MMMM         OO  OO
-DD     DD        E               MM MM     MM MM       OOO    OOO
-DD     DDD       E               MM  MM   MM  MM      OOO      OOO
-DD     DDDD      EEEEEEEE        MM   MM MM   MM      OO        OO
-DD     DDD       E               MM    MMM    MM      OOO      OOO
-DD     DD        E               MM     M     MM       OOO    OOO
-DDDDDDDD         EEEEEEEEE       MM           MM         OO  OO
-DDDDDDD          EEEEEEEEE       MM           MM         OOOOOO
+ ______   _______  _______  _______ 
+(  __  \ (  ____ \(       )(  ___  )
+| (  \  )| (    \/| () () || (   ) |
+| |   ) || (__    | || || || |   | |
+| |   | ||  __)   | |(_)| || |   | |
+| |   ) || (      | |   | || |   | |
+| (__/  )| (____/\| )   ( || (___) |
+(______/ (_______/|/     \|(_______)
